@@ -1,0 +1,3 @@
+(library
+ (name quests)
+ (libraries common quest01))
