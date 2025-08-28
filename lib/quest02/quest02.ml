@@ -35,7 +35,7 @@ let play_line (input: Input.content) =
 
   !cur_fluffbolt
 
-let shoot_circle (input: Input.content) = 
+let play_circle (input: Input.content) = 
   let shoot_circle fluffbolt queue1 queue2 = 
     let ballon = Deque.pop_front queue1 in 
     let ballons_cnt = Deque.length queue1 + Deque.length queue2 in
@@ -73,7 +73,7 @@ let shoot_circle (input: Input.content) =
 
 let part1 = string_of_int << play_line << Input.parse
 
-let part2 ~repeat = string_of_int << shoot_circle << Input.parse ~repeat
+let part2 ~repeat = string_of_int << play_circle << Input.parse ~repeat
 
 let part3 = part2
 
