@@ -1,7 +1,7 @@
 let solve quest part = 
   match quest with 
   | "quest01" -> Quest01.solve part ()
-  | "quest02" -> failwith "unimplemented"
+  | "quest02" -> Quest02.solve part ()
   | "quest03" -> failwith "unimplemented"
   | _ -> 
     quest 

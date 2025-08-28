@@ -28,6 +28,10 @@ let until condition action =
   in
   loop ()
 
+let repeat_array times arr =
+  List.init times (fun _ -> arr)
+  |> Array.concat
+
 let read_file filename =
   let ic = open_in filename in
   let content = really_input_string ic (in_channel_length ic) in
