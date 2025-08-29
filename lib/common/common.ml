@@ -1,6 +1,8 @@
 let (<<) f g x = f (g x)
 let rec (--) i j = if i >= j then [] else i :: i + 1 -- j
 
+let flip f x y = f y x
+
 let list_to_string char_list = String.of_seq (List.to_seq char_list)
 let array_to_string char_array = String.init (Array.length char_array) (fun i -> char_array.(i))
 let string_to_list str = List.init (String.length str) (fun i -> str.[i])

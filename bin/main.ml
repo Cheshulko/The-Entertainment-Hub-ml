@@ -2,7 +2,7 @@ let solve quest part =
   match quest with 
   | "quest01" -> Quest01.solve part ()
   | "quest02" -> Quest02.solve part ()
-  | "quest03" -> failwith "unimplemented"
+  | "quest03" -> Quest03.solve part ()
   | _ -> 
     quest 
     |> Printf.sprintf "Wrong quest '%s'. Supported quests: 'quest01', 'quest02', 'quest03'" 

@@ -1,0 +1,3 @@
+(library
+ (name quest03)
+ (libraries common str))

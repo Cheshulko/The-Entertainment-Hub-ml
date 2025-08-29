@@ -1,3 +1,3 @@
 (library
  (name quests)
- (libraries common deque quest01 quest02))
+ (libraries common deque quest01 quest02 quest03))
