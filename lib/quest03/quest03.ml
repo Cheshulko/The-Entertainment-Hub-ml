@@ -53,7 +53,7 @@ module Input = struct
 
   let parse_bets input = input
   |> Str.split (Str.regexp "\n") 
-  |> List.map (Array.of_list << List.map (fun x -> x - int_of_char '0') << List.map int_of_char << string_to_list)
+  |> List.map (Array.of_list << List.map (flip (-) (int_of_char '0')) << List.map int_of_char << string_to_list)
   |> Array.of_list
 
   let parse input = 
@@ -87,11 +87,13 @@ let update_state (state: Input.state) =
   let spin = state.roll_number * state.pulse in 
   let pulse = (state.pulse + spin) mod state.seed + 1 + state.roll_number + state.seed in
   let roll_number = state.roll_number + 1 in 
+
   {state with spin; pulse; roll_number}
 
 let play_die (die: Input.die) =
   let state = update_state die.state in
   let position = (die.state.position + state.spin) mod (Array.length die.faces) in
+  
   {die with state = {state with position}}
 
 let play_dies = Array.map play_die

@@ -113,4 +113,4 @@ let rec solvePart part =
 
 let solve part = fun () -> 
   let result = solvePart part in
-  Printf.printf "Quest01. Part: %s. Result: %s\n" part result
+  Printf.printf "Quest02. Part: %s. Result: %s\n" part result
